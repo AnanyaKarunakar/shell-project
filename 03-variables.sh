@@ -1,6 +1,6 @@
 #!/bin/bash
 
-PERSON1=Trump
+PERSON1=Modi
 PERSON2=Musk
 
 echo "$PERSON1:: Hey $PERSON2, How are you?"   		# to differ normal text and variable that why we represent variable with $
