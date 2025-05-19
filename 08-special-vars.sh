@@ -8,4 +8,4 @@ echo "User running the Script: $USER"
 echo "Home Direcotry of user: $HOME"
 echo "PID of the script: $$"
 sleep 10 &
-echo "PID of lat command in background: $!"
+echo "PID of last command in background: $!"
