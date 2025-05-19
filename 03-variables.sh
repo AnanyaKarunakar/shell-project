@@ -9,4 +9,4 @@ echo "$PERSON1:: I am fine too. What's up?"
 echo "$PERSON2:: Nothing, Just going to Mars now, will you come"
 echo "$PERSON1:: Sorry, you carry on! I will come once yu come back"
 echo "$PERSON2:: Ho thagt's great Idea"
-echo "$PERSON1:: Sure!!
+echo "$PERSON1:: Sure!!"
