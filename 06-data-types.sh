@@ -1,4 +1,4 @@
-
+#Data types
 #!/bin/bash
 
 NUMBER1=100
