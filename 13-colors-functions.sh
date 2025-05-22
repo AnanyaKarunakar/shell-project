@@ -24,36 +24,36 @@ VALIDATE(){
 	fi
 }
 
-dnf list installed mysql
+apt list installed mysql
 
 if [ $? -ne 0 ]
 then
     echo "MySQL is not installed... going to install it now"
-    dnf install mysql -y
+    apt install mysql -y
 
 VALIDATE $? "MySQL"
 else
     echo "MySQL is $Y already installed $N... Nothing to do"
 fi
 
-dnf list installed python3
+apt list installed python3
 
 if [ $? -ne 0 ]
 then
     echo "python3 is not installed... going to install it now"
-    dnf install python3 -y
+    apt install python3 -y
 
 VALIDATE $? "python3"
 else
     echo "pyhton3 is $Y already installed $N ... Nothing to do"
 fi
 
-dnf list installed nginx
+apt list installed nginx
 
 if [ $? -ne 0 ]
 then
     echo "nginx is not installed... going to install it now"
-    dnf install nginx -y
+    apt install nginx -y
 
 VALIDATE $? "nginx"
 else
