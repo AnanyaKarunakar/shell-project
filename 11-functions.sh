@@ -11,9 +11,9 @@ fi
 VALIDATE(){
 	if [ $? -eq 0 ]
 	then
-		echo "Installing $1 is ... SUCCESS"
+		echo "Installing $? is ... SUCCESS"
 	else
-		echo "Installing $1 is FAILURE"
+		echo "Installing $? is FAILURE"
 		exit 1
 	fi
 }
