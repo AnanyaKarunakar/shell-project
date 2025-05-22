@@ -8,6 +8,16 @@ then
 else
 	echo "You are running with root access"
 fi
+VALIDATE(){
+	if [ $? -eq 0 ]
+	then
+		echo "Installing $2 is ... SUCCESS"
+	else
+		echo "Installing $2 is FAILURE"
+		exit 1
+	fi
+}
+
 dnf list installed mysql
 
 if [ $? -ne 0 ]
@@ -15,14 +25,7 @@ then
     echo "MySQL is not installed... going to install it now"
     dnf install mysql -y
 
-if [ $? -eq 0 ]
-then
-	echo "Installing MySQL is ... SUCCESS"
-else
-	echo "Installing MySQL is ... FAILURE"
-	exit 1
-fi
-
+VALIDATE $? "MySQL"
 else
     echo "MySQL is already installed... Nothing to do"
 fi
@@ -34,14 +37,7 @@ then
     echo "python3 is not installed... going to install it now"
     dnf install python3 -y
 
-if [ $? -eq 0 ]
-then
-	echo "Installing python3 is ... SUCCESS"
-else
-	echo "Installing python3 is ... FAILURE"
-	exit 1
-fi
-
+VALIDATE $? "python3"
 else
     echo "pyhton3 is already installed... Nothing to do"
 fi
@@ -53,14 +49,7 @@ then
     echo "nginx is not installed... going to install it now"
     dnf install nginx -y
 
-if [ $? -eq 0 ]
-then
-	echo "Installing nginx is ... SUCCESS"
-else
-	echo "Installing nginx is ... FAILURE"
-	exit 1
-fi
-
+VALIDATE $? "nginx"
 else
     echo "nginx is already installed... Nothing to do"
 fi
