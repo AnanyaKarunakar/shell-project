@@ -9,7 +9,7 @@ N="\e[0m"
 
 LOGS_FOLDER="/var/log/shellscript-logs"
 SCRIPT_NAME=$(echo $0 | cut -d "." -f1)
-LOG_FILE="$LOGS_FOLDER/SCRIPT_NAME.log"
+LOG_FILE="$LOGS_FOLDER/$SCRIPT_NAME.log"
 
 mkdir -p $LOGS_FOLDER
 echo "Script started executing at: $(date)" | tee -a $LOG_FILE
@@ -32,7 +32,7 @@ VALIDATE(){
 	fi
 }
 
-dnf list installed mysql &>>$LOGS_FILE
+dnf list installed mysql &>>$LOG_FILE
 
 if [ $? -ne 0 ]
 then
@@ -44,7 +44,7 @@ else
     echo "MySQL is $Y already installed $N... Nothing to do" | tee -a $LOG_FILE
 fi
 
-dnf list installed python3 &>>$LOGS_FILE
+dnf list installed python3 &>>$LOG_FILE
 
 if [ $? -ne 0 ]
 then
@@ -56,12 +56,12 @@ else
     echo "pyhton3 is $Y already installed $N ... Nothing to do" | tee -a $LOG_FILE
 fi
 
-dnf list installed nginx &>>$LOGS_FILE
+dnf list installed nginx &>>$LOG_FILE
 
 if [ $? -ne 0 ]
 then
     echo "nginx is not installed... going to install it now" | tee -a $LOG_FILE
-    dnf install nginx -y &>>$LOGS_FILE
+    dnf install nginx -y &>>$LOG_FILE
 
 VALIDATE $? "nginx"
 else
