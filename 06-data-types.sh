@@ -12,7 +12,7 @@ echo "SUM of $NUMBER1 and $NUMBER2 is: $SUM"
 
 #variables
 
-#!/bin/bash
+# #!/bin/bash
 
 # PERSON1=$1
 # PERSON2=$2
