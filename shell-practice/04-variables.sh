@@ -1,6 +1,6 @@
 #!/bin/bash
 
-PERSON1=$1
+PERSON1=$1 # we can give in cli itself here like "sh 04-variables.sh Ramesh Suresh"
 PERSON2=$2
 
 echo "$PERSON1:: Hey $PERSON2, How are you?"
